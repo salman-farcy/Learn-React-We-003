@@ -10,4 +10,5 @@ export const minData = (d, f) =>{
     return d - f;
 }
 
-
+// Another method is to export named
+export let myName = "salman farcy";
