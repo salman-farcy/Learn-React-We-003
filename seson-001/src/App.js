@@ -3,25 +3,32 @@ import Footer from "./Components/Footer";
 import Header from "./Components/Header";
 
 function App() {
-  let headerInfo ={
+  let headerInfo = {
     email: "salmanfarcy@gmail.com",
     phone: "01602695577",
     name: "salman farcy",
     age: 24,
     biodata: {
-      address: "dhaka, md pur 1207"
-    }
-  }
+      address: "dhaka, md pur 1207",
+    },
+  };
   return (
-   <div>
-    <Header headerInfo={headerInfo} cname="GREATE farcy"/>
-    
-    <Footer />
-   </div>
+    <div>
+      <Header headerInfo={headerInfo} cname="GREATE farcy">
+        <h1>welcome to Bangladesh</h1>
+        <h1>welcome to Bangladesh</h1>
+        <h1>welcome to Bangladesh</h1>
+        <h1>welcome to Bangladesh</h1>
+      </Header>
+
+      <Footer>
+        <h1>welcome to Bangladesh</h1>
+        <h1>welcome to Bangladesh</h1>
+        <h1>welcome to Bangladesh</h1>
+        <h1>welcome to Bangladesh</h1>
+      </Footer>
+    </div>
   );
 }
 
 export default App;
-
-
-

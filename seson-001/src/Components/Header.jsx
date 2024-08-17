@@ -2,7 +2,7 @@ import { Button, Card, Col, Container, Row } from "react-bootstrap";
 
 
 
-const Header = ({headerInfo, cname}) => {
+const Header = ({headerInfo, cname, children}) => {
  let {email, phone, name, age, biodata} = headerInfo;
   console.log(email)
   console.log(phone)
@@ -13,11 +13,13 @@ const Header = ({headerInfo, cname}) => {
   console.log(cname)
   return (
     <>
+    
       <Container fluid>
         <Container>
           <Row>
             <Col className="col text-center">
               <h1>Our Courses</h1>
+              {children}
             </Col>
           </Row>
           <Row className="row-gap-4">
