@@ -3,8 +3,12 @@ import { Button, Card, Col, Container, Row } from "react-bootstrap";
 
 
 const Header = ({headerInfo}) => {
- 
-  console.log(headerInfo.email)
+ let {email, phone, name, age, biodata} = headerInfo;
+  console.log(email)
+  console.log(phone)
+  console.log(name)
+  console.log(age)
+  console.log(biodata)
   return (
     <>
       <Container fluid>
