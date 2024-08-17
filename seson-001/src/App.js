@@ -14,7 +14,7 @@ function App() {
   }
   return (
    <div>
-    <Header headerInfo={headerInfo} />
+    <Header headerInfo={headerInfo} cname="GREATE farcy"/>
     
     <Footer />
    </div>

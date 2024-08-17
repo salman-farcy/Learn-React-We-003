@@ -2,13 +2,15 @@ import { Button, Card, Col, Container, Row } from "react-bootstrap";
 
 
 
-const Header = ({headerInfo}) => {
+const Header = ({headerInfo, cname}) => {
  let {email, phone, name, age, biodata} = headerInfo;
   console.log(email)
   console.log(phone)
   console.log(name)
   console.log(age)
   console.log(biodata)
+
+  console.log(cname)
   return (
     <>
       <Container fluid>
