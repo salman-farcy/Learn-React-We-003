@@ -6,7 +6,7 @@ function App() {
 
   return (
    <div>
-    <Header email="salmanfarcy@gmail.com" />
+    <Header phone="01602695577" email="salmanfarcy@gmail.com" />
     
     <Footer />
    </div>

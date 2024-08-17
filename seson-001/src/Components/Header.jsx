@@ -3,6 +3,7 @@ import { Button, Card, Col, Container, Row } from "react-bootstrap";
 
 
 const Header = (props) => {
+  console.log(props);
   console.log(props)
   return (
     <>
