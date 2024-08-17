@@ -2,9 +2,9 @@ import { Button, Card, Col, Container, Row } from "react-bootstrap";
 
 
 
-const Header = (props) => {
-  console.log(props);
-  console.log(props)
+const Header = ({headerInfo}) => {
+ 
+  console.log(headerInfo.email)
   return (
     <>
       <Container fluid>
