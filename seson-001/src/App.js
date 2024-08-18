@@ -1,6 +1,8 @@
+import { Button, Card, Col, Container, Row } from "react-bootstrap";
 import "./App.css";
 import Footer from "./Components/Footer";
 import Header from "./Components/Header";
+import { posts } from "./data/post";
 
 function App() {
   let headerInfo = {
@@ -16,15 +18,22 @@ function App() {
     <div>
       <Header headerInfo={headerInfo} cname="GREATE farcy">
         <h1>welcome to Bangladesh</h1>
-        <h1>welcome to Bangladesh</h1>
-        <h1>welcome to Bangladesh</h1>
-        <h1>welcome to Bangladesh</h1>
       </Header>
 
+      <Container>
+        <Row>
+          {
+          posts.map((post, index) =>{
+            return(
+              <ProductItems postItem={post} key={post.id} postId={post.id}/>
+              
+            )
+          })
+          }
+        </Row>
+      </Container>
+
       <Footer>
-        <h1>welcome to Bangladesh</h1>
-        <h1>welcome to Bangladesh</h1>
-        <h1>welcome to Bangladesh</h1>
         <h1>welcome to Bangladesh</h1>
       </Footer>
     </div>
@@ -32,3 +41,18 @@ function App() {
 }
 
 export default App;
+
+function ProductItems({postItem, indexes}) {
+  let {title, body} = postItem;
+  return (
+    <div className="col-lg-3  mb-4 ">
+      <Card >
+        <Card.Body>
+          <Card.Title>{title}</Card.Title>
+          <Card.Text>{body}</Card.Text>
+          <Button variant="primary">Go somewhere</Button>
+        </Card.Body>
+      </Card>
+    </div>
+  );
+}

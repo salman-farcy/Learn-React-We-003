@@ -3,14 +3,14 @@ import { Button, Card, Col, Container, Row } from "react-bootstrap";
 
 
 const Header = ({headerInfo, cname, children}) => {
- let {email, phone, name, age, biodata} = headerInfo;
-  console.log(email)
-  console.log(phone)
-  console.log(name)
-  console.log(age)
-  console.log(biodata)
+//  let {email, phone, name, age, biodata} = headerInfo;
+  // console.log(email)
+  // console.log(phone)
+  // console.log(name)
+  // console.log(age)
+  // console.log(biodata)
 
-  console.log(cname)
+  // console.log(cname)
   return (
     <>
     
@@ -22,7 +22,7 @@ const Header = ({headerInfo, cname, children}) => {
               {children}
             </Col>
           </Row>
-          <Row className="row-gap-4">
+          {/* <Row className="row-gap-4">
             <Col lg="3" md="6">
               <Card >
                 <Card.Img variant="top" src="holder.js/100px180" />
@@ -88,7 +88,7 @@ const Header = ({headerInfo, cname, children}) => {
                 </Card.Body>
               </Card>
             </Col>
-          </Row>
+          </Row> */}
         </Container>
       </Container>
     </>
