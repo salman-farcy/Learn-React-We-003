@@ -3,6 +3,9 @@ import "./App.css";
 import Footer from "./Components/Footer";
 import Header from "./Components/Header";
 import { posts } from "./data/post";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faAmazon, faWhatsapp } from "@fortawesome/free-brands-svg-icons";
+import { faPhone } from "@fortawesome/free-solid-svg-icons";
 
 function App() {
   let headerInfo = {
@@ -18,6 +21,10 @@ function App() {
     <div>
       <Header headerInfo={headerInfo} cname="GREATE farcy">
         <h1>welcome to Bangladesh</h1>
+        <FontAwesomeIcon icon={faWhatsapp} className="text-danger"/>
+        <FontAwesomeIcon icon={faPhone} className="text-danger"/>
+        <FontAwesomeIcon icon={faAmazon} className="text-danger"/>
+
       </Header>
 
       <Container>

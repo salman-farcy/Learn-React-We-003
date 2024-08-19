@@ -10,7 +10,7 @@ const Header = ({headerInfo, cname, children}) => {
   // console.log(age)
   // console.log(biodata)
 
-  // console.log(cname)
+  console.log(cname)
   return (
     <>
     
