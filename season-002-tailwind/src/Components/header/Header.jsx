@@ -1,9 +1,12 @@
 
 import "./header.css";
+
+
+
 const Header = () => {
   return (
     <div className="alingment">
-      <h1 className="desing">Header Code</h1>
+     <h1>salman rarcy tha greate</h1>
     </div>
   )
 }
