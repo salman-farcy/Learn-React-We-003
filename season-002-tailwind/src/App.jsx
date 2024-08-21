@@ -11,6 +11,17 @@ function App() {
   let [dicrige, setDicrige] = useState(0);
   let [update, setUpdate] = useState(0);
 
+  let template= "";
+  //tarnarry oprators
+  let [pdisplay, setPdisplay] = useState(false);
+
+  //Conditional rendering using if elase
+  if(pdisplay){
+    template = <p>i love my bangladesh</p>
+  }else{
+    template = ""
+  }
+
     // const [value, setValue] = useState(0)
   let nm = 10;
   let dataShow = () => {
@@ -42,6 +53,11 @@ function App() {
         <button onClick={()=> setUpdate(incrige + dicrige)} className='bg-blue-500 py-2 px-5'>Dicriment</button>
         {/* <button onClick={() => setValue(value + 1)} className='bg-blue-500 py-2 px-5'>Dicriment</button>
         <button onClick={() => setValue(value - 1)} className='bg-fuchsia-500 py-2 px-5'>Dicriment</button> */}
+      </div>
+
+      <div>
+      <button onClick={() =>setPdisplay(!pdisplay)} className='bg-green-600 py-3 px-5'>{pdisplay ? <p>hide</p> : <p>show</p>}</button>
+      {template}
       </div>
     </div>
   )
