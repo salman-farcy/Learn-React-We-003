@@ -1,0 +1,21 @@
+import { useState } from "react";
+import "./App.css";
+import Header from "./component/header/Header";
+
+function App() {
+  let [status, setStatus] = useState(true)
+
+  return (
+    <>
+      
+      {
+        status ? <Header /> : ''
+      }
+      <button onClick={() => setStatus(!status)} className="bg-blue-400 py-3 px-7">{status ? <p>Header Hide</p> : <p>Header show</p>}</button>
+
+      <h1 className="bg-green-600">salman farcy the greate</h1>
+    </>
+  );
+}
+
+export default App;
