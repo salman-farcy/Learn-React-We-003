@@ -17,7 +17,7 @@ function App() {
 
   //Conditional rendering using if elase
   if(pdisplay){
-    template = <p>i love my bangladesh</p>
+    template = <Card/>
   }else{
     template = ""
   }
@@ -65,3 +65,9 @@ function App() {
 
 export default App;
  
+
+let Card = () => {
+  return(
+    <h1>my cuntery in the best countery</h1>
+  )
+}
