@@ -2,13 +2,14 @@ import { useState } from "react";
 import "./App.css";
 import btnModuleCss from "./component/Btn-module/Button.module.css"
 import Header from "./component/header/Header";
+import Inpunt from "./component/input-managment/inpunt";
 
 function App() {
   let [status, setStatus] = useState(true)
 
   return (
     <>
-      
+      <Inpunt />
       {
         status ? <Header /> : ''
       }
