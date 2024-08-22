@@ -59,3 +59,35 @@
   top: 50%;
   transform: rotate(90deg);
 }
+
+/* Faqs */
+.faqOuter{
+  width: 1320px;
+  margin: auto;
+}
+.faqsItems{
+  border: 2px solid red;
+  margin-bottom: 15px;
+}
+
+.faqsItems h2{
+  padding: 10px;
+  background-color: #282c34;
+  color: white;
+  text-align: left;
+  cursor: pointer;
+}
+.faqsItems p{
+  text-align: left;
+  transform: scaleY(0);
+  padding: 0px;
+  height: 0px;
+  margin: 0px;
+}
+
+.activeAns{
+  height: auto !important;
+  transform: scaleY(1) !important;
+  padding: 10px !important;
+  transition: .5s;
+}

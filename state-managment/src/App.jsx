@@ -5,6 +5,7 @@ import Header from "./component/header/Header";
 import Inpunt from "./component/input-managment/inpunt";
 import Nav from "./component/header/Nav";
 import Modal from "./component/modal/Modal";
+import Faqs from "./component/faq/Faqs";
 
 function App() {
   let [status, setStatus] = useState(true);
@@ -29,6 +30,8 @@ function App() {
       <div>
         <button className={btnModuleCss.error}>Error</button>
       </div>
+
+      <Faqs />
     </>
   );
 }
