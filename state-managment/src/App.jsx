@@ -4,6 +4,7 @@ import btnModuleCss from "./component/Btn-module/Button.module.css";
 import Header from "./component/header/Header";
 import Inpunt from "./component/input-managment/inpunt";
 import Nav from "./component/header/Nav";
+import Modal from "./component/modal/Modal";
 
 function App() {
   let [status, setStatus] = useState(true);
@@ -13,6 +14,7 @@ function App() {
   return (
     <>
       <Nav />
+      <Modal />
       <Inpunt />
       {status ? <Header /> : ""}
       <button
