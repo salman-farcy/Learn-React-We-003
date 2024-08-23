@@ -1,8 +1,8 @@
-import { useContext } from "react";
-import { CartContext } from "../../context/Cart";
+
+import { useCart } from "../../context/Cart";
 
 const Item = (props) => {
-  const cart = useContext(CartContext);
+  const cart = useCart();
   let { items, setItems } = cart;
   return (
     <div className="mt-10 bg-slate-100 p-4 rounded-lg">

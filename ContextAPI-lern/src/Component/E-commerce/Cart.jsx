@@ -1,8 +1,8 @@
-import { useContext } from "react";
-import { CartContext } from "../../context/Cart";
+import { useCart } from "../../context/Cart";
 
 const Cart = () => {
-  const cart = useContext(CartContext);
+  const cart = useCart();
+  console.log("Cart", cart)
   return (
     <div className="bg-green-100 p-4 rounded-lg">
       {
