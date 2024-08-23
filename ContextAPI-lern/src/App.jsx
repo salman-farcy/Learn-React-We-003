@@ -1,4 +1,4 @@
-import CounterApp from "./Component/CounterApp";
+import CounterApp from "./Component/counter/CounterApp";
 import { MyProvider } from "./context/Counter";
 
 function App() {
