@@ -5,7 +5,8 @@ import Header from "./component/header/Header";
 import Inpunt from "./component/input-managment/inpunt";
 import Nav from "./component/header/Nav";
 import Modal from "./component/modal/Modal";
-import Faqs from "./component/faq/Faqs";
+import FristNext from "./component/frist-next/FristNext";
+// import Faqs from "./component/faq/Faqs";
 
 function App() {
   let [status, setStatus] = useState(true);
@@ -31,7 +32,8 @@ function App() {
         <button className={btnModuleCss.error}>Error</button>
       </div>
 
-      <Faqs />
+      {/* <Faqs /> */}
+      <FristNext />
     </>
   );
 }
