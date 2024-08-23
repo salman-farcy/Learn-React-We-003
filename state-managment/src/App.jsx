@@ -6,6 +6,7 @@ import Inpunt from "./component/input-managment/inpunt";
 import Nav from "./component/header/Nav";
 import Modal from "./component/modal/Modal";
 import FristNext from "./component/frist-next/FristNext";
+import { QnaProvider } from "./context/Qna";
 // import Faqs from "./component/faq/Faqs";
 
 function App() {
@@ -33,7 +34,9 @@ function App() {
       </div>
 
       {/* <Faqs /> */}
-      <FristNext />
+      <QnaProvider>
+        <FristNext />
+      </QnaProvider>
     </>
   );
 }

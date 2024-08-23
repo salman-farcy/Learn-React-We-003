@@ -1,26 +1,18 @@
-import { useState } from "react";
-import { firstNext } from "../../data/Data";
+import { useContext } from "react";
 import FirstItems from "./FirstItems";
+import { QnaContext } from "../../context/Qna";
 
 const FristNext = () => {
-  let [curretId, setCurrentId] = useState(firstNext[0].id);
-
-  let items = firstNext.map((itemsData, index) => {
-    let itemDetails = {
-      itemsData,
-      curretId,
-      setCurrentId
-    };
-    return <FirstItems itemDetails={itemDetails} key={index} />;
-  });
-
+  const contextData = useContext(QnaContext);
   return (
     <div>
       <h1 className="text-center font-bold text-3xl">
-        Frequently Asked Questions (FAQs)
+        Frequently Asked Questions (FAQs): {contextData.firstNext.length}
       </h1>
 
-      <div className="faqOuter">{items}</div>
+      <div className="faqOuter">
+        <FirstItems />
+      </div>
     </div>
   );
 };

@@ -1,12 +1,21 @@
-const FirstItems = ({ itemDetails }) => {
+import { useContext } from "react";
+import { QnaContext } from "../../context/Qna";
 
-  let { itemsData, curretId, setCurrentId } = itemDetails;
+const FirstItems = () => {
+  const contextData = useContext(QnaContext);
+  let {firstNext, curretId, setCurrentId,} = contextData;
   return (
-    <div className="faqsItems">
-      <h2 onClick={()=> setCurrentId(itemsData.id)}>{itemsData.question}</h2>
-      <p className={curretId === itemsData.id ? "activeAns" : ""}>
-        {itemsData.answer}
-      </p>
+    <div>
+      {
+        firstNext.map((item, i) => {
+          return(
+            <div className="faqsItems" key={i}>
+              <h2 onClick={()=> setCurrentId(item.id)}>{item.question}</h2>
+              <p className={curretId === item.id ? "activeAns" : ""}>{item.answer}</p>
+            </div>
+          )
+        })
+      }
     </div>
   );
 };
