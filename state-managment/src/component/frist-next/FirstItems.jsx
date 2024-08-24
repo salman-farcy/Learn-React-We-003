@@ -7,9 +7,9 @@ const FirstItems = () => {
   return (
     <div>
       {
-        firstNext.map((item, i) => {
+        firstNext.map(item => {
           return(
-            <div className="faqsItems" key={i}>
+            <div className="faqsItems" key={item.id}>
               <h2 onClick={()=> setCurrentId(item.id)}>{item.question}</h2>
               <p className={curretId === item.id ? "activeAns" : ""}>{item.answer}</p>
             </div>
