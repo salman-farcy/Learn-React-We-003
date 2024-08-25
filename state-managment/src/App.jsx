@@ -7,6 +7,7 @@ import Nav from "./component/header/Nav";
 import Modal from "./component/modal/Modal";
 import FristNext from "./component/frist-next/FristNext";
 import { QnaProvider } from "./context/Qna";
+
 // import Faqs from "./component/faq/Faqs";
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
 
   // let [menuStatus, setMenuStatus] = useState(false)
 
+  
   return (
     <>
       <Nav />
@@ -37,6 +39,7 @@ function App() {
       <QnaProvider>
         <FristNext />
       </QnaProvider>
+      
     </>
   );
 }
