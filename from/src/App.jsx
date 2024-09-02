@@ -48,6 +48,13 @@ function App() {
     }
   };
 
+
+  //Delet user Data
+  const deletUserData = (index) => {
+    const deleteData = userData.filter((v, i) => i != index)
+    setUserData(deleteData)
+  }
+
   return (
     <div>
       <div className="w-[1200px] mx-auto flex justify-between">
@@ -123,16 +130,16 @@ function App() {
             </thead>
             {userData.length >= 1 ? (
               <tbody>
-                {[...userData].reverse().map((data, i) => {
+                {userData.map((data, index) => {
                   return (
-                    <tr key={i} className="border-2">
-                      <td className="border-2">{i + 1}</td>
+                    <tr key={index} className="border-2">
+                      <td className="border-2">{index + 1}</td>
                       <td className="border-2">{data.uname}</td>
                       <td className="border-2">{data.uemail}</td>
                       <td className="border-2">{data.uphone}</td>
                       <td className="border-2">{data.umessage}</td>
                       <td className="border-2">
-                        <button className="bg-red-200 px-4 py-1 mr-2">
+                        <button onClick={() => deletUserData(index)} className="bg-red-200 px-4 py-1 mr-2">
                           Delet
                         </button>
                         <button className="bg-blue-200 px-4 py-1">Edit</button>
