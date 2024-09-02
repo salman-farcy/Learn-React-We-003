@@ -18,9 +18,9 @@ function App() {
     let inputValue = e.target.value;
     oldData[inputName] = inputValue;
     setFormData(oldData);
-    
   };
 
+  // data Submite
   let handleSubmit = (e) => {
     e.preventDefault();
     let currentUserFormdata = {
@@ -29,17 +29,23 @@ function App() {
       uphone: formData.uphone,
       umessage: formData.umessage,
     };
-    let oldAndNewData = [...userData, currentUserFormdata];
-    setUserData(oldAndNewData);
-    setFormData(
-      {
+
+    let checkFilterUser = userData.filter((v) => v.uemail == formData.uemail || v.uphone == formData.uphone);
+
+    if (checkFilterUser.length == 1) {
+      alert("alrady exist data");
+    } 
+    else {
+      let oldAndNewData = [...userData, currentUserFormdata];
+      setUserData(oldAndNewData);
+      setFormData({
         uname: "",
         uemail: "",
         uphone: "",
         umessage: "",
         index: "",
-      }
-    )
+      });
+    }
   };
 
   return (
