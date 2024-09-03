@@ -1,5 +1,6 @@
 import { useState } from "react";
 // import { FaEyeSlash, FaRegEye } from "react-icons/fa";
+import { ToastContainer, toast } from 'react-toastify';
 
 function App() {
   const [formData, setFormData] = useState({
@@ -33,7 +34,7 @@ function App() {
     let checkFilterUser = userData.filter((v) => v.uemail == formData.uemail || v.uphone == formData.uphone);
 
     if (checkFilterUser.length == 1) {
-      alert("alrady exist data");
+      toast.error("email ar alrady exsiste")
     } 
     else {
       let oldAndNewData = [...userData, currentUserFormdata];
@@ -45,6 +46,7 @@ function App() {
         umessage: "",
         index: "",
       });
+      toast.success("Email submidede")
     }
   };
 
@@ -53,10 +55,12 @@ function App() {
   const deletUserData = (index) => {
     const deleteData = userData.filter((v, i) => i != index)
     setUserData(deleteData)
+    toast.success("delet success")
   }
 
   return (
     <div>
+      <ToastContainer />
       <div className="w-[1200px] mx-auto flex justify-between">
         <div className="">
           <form onSubmit={handleSubmit}>
