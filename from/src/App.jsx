@@ -1,6 +1,6 @@
 import { useState } from "react";
 // import { FaEyeSlash, FaRegEye } from "react-icons/fa";
-import { ToastContainer, toast } from 'react-toastify';
+import { ToastContainer, toast } from "react-toastify";
 
 function App() {
   const [formData, setFormData] = useState({
@@ -31,32 +31,49 @@ function App() {
       umessage: formData.umessage,
     };
 
-    let checkFilterUser = userData.filter((v) => v.uemail == formData.uemail || v.uphone == formData.uphone);
-
-    if (checkFilterUser.length == 1) {
-      toast.error("email ar alrady exsiste")
-    } 
-    else {
-      let oldAndNewData = [...userData, currentUserFormdata];
-      setUserData(oldAndNewData);
-      setFormData({
-        uname: "",
-        uemail: "",
-        uphone: "",
-        umessage: "",
-        index: "",
-      });
-      toast.success("Email submidede")
+    if (formData.index === "") {
+      let checkFilterUser = userData.filter(
+        (v) => v.uemail == formData.uemail || v.uphone == formData.uphone
+      );
+      if (checkFilterUser.length == 1) {
+        toast.error("email ar alrady exsiste");
+      } else {
+        let oldAndNewData = [...userData, currentUserFormdata];
+        setUserData(oldAndNewData);
+        setFormData({
+          uname: "",
+          uemail: "",
+          uphone: "",
+          umessage: "",
+          index: "",
+        });
+        toast.success("Email submidede");
+      }
+    }
+    else{
+      let editIndex = formData.index;
+      let oldData = userData;
+      oldData[editIndex]['uname']=formData.uname
+      oldData[editIndex]['uemail']=formData.uemail
+      oldData[editIndex]['uphoe']=formData.uphone
+      oldData[editIndex]['umessage']=formData.umessage
+      setUserData(oldData)
     }
   };
 
-
   //Delet user Data
   const deletUserData = (index) => {
-    const deleteData = userData.filter((v, i) => i != index)
-    setUserData(deleteData)
-    toast.success("delet success")
-  }
+    const deleteData = userData.filter((v, i) => i != index);
+    setUserData(deleteData);
+    toast.success("delet success");
+  };
+
+  //update data
+  const updateData = (index) => {
+    const findeData = userData.find((v, i) => i == index);
+    findeData["index"] = index;
+    setFormData(findeData);
+  };
 
   return (
     <div>
@@ -143,10 +160,18 @@ function App() {
                       <td className="border-2">{data.uphone}</td>
                       <td className="border-2">{data.umessage}</td>
                       <td className="border-2">
-                        <button onClick={() => deletUserData(index)} className="bg-red-200 px-4 py-1 mr-2">
+                        <button
+                          onClick={() => deletUserData(index)}
+                          className="bg-red-200 px-4 py-1 mr-2"
+                        >
                           Delet
                         </button>
-                        <button className="bg-blue-200 px-4 py-1">Edit</button>
+                        <button
+                          onClick={() => updateData(index)}
+                          className="bg-blue-200 px-4 py-1"
+                        >
+                          Edit
+                        </button>
                       </td>
                     </tr>
                   );
